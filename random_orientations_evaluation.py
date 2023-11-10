@@ -25,7 +25,7 @@ fq = 20
 fs = 600
 nr_samples = 36000
 noise_levels = [0.5, 2.0, 4.0]
-nr_orientations = 50
+nr_orientations = 1000
 regularization = 0.05
 
 visualize_results = True

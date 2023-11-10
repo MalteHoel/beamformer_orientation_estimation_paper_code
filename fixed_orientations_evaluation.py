@@ -23,19 +23,19 @@ nr_samples = 36000
 noise_levels = [0.5, 2.0, 4.0]
 modality = 'EEG'
 regularization = 0.05
-bootstrapping_repetitions = 2
+bootstrapping_repetitions = 100
 use_nonuniform_noise = False
 
 azimuth_min = 0
 azimuth_max = np.pi
-azimuth_resolution = 6
+azimuth_resolution = 21
 # for elevation = np.pi/2 (resp. -np.pi/2) all points, independent of azimuth angle,
 # are the same. To avoid sampling the same point multiple times, we start little below np.pi/2
 # (resp. a little above -np.pi/2)
 elevation_eps = np.pi / 100
 elevation_min = -np.pi / 2 + elevation_eps
 elevation_max = np.pi / 2 - elevation_eps
-elevation_resolution = 6
+elevation_resolution = 21
 
 header_fontsize = 20
 text_fontsize = 12

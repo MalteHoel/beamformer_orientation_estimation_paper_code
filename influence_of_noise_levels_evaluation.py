@@ -19,12 +19,9 @@ meg_lf = np.load('data/V5_meg_lf.npy')
 fq = 20
 fs = 600
 nr_samples = 36000
-upper_lim = 10
-lower_lim = 0.5
-resolution = 20
-eeg_noise_levels = np.linspace(lower_lim, upper_lim, resolution)
+eeg_noise_levels = np.concatenate((np.linspace(0.5, 2, 4), np.linspace(3, 10, 8)))
 meg_noise_level = 4.0
-nr_orientations = 10
+nr_orientations = 1000
 regularization = 0.05
 
 optimize_orientations = False

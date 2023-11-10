@@ -1,1 +1,3 @@
+# Ignore everything in this directory expect the gitignore file itself
+*
 !.gitignore
