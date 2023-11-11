@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from random_orientation_utilities import *
 from orientation_reconstruction_utilities import *
 from multiprocessing import Pool
+import matplotlib as mpl
 import statistics
 
 #################################
@@ -49,6 +50,11 @@ def single_emeg_reconstruction_experiment_wrapper(count, true_orientation, eeg_l
 
 
 if __name__ == '__main__':
+  
+  mpl.rcParams["font.family"] = 'Arial'
+  mpl.rcParams['mathtext.fontset'] = 'custom'
+  mpl.rcParams['mathtext.it'] = 'Arial:italic'
+  mpl.rcParams['mathtext.rm'] = 'Arial'
   
   # perform simulation
   eeg_ug_means = []
@@ -98,8 +104,8 @@ if __name__ == '__main__':
   axes.set_xlabel('Noise $\sigma_{E}$', fontsize = fontsize)
   axes.set_ylabel('mean angle error (degree)', fontsize = fontsize)
   
-  axes.set_xlim([0, upper_lim + 1])
-  axes.set_xticks(list(range(0, upper_lim + 1, 1)))
+  axes.set_xlim([0, eeg_noise_levels.max() + 1])
+  axes.set_xticks(list(range(0, int(eeg_noise_levels.max() + 1), 1)))
   
   axes.set_ylim([0, 90])
   axes.set_yticks(list(range(0, 91, 10)))

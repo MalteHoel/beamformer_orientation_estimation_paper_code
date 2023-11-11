@@ -5,6 +5,7 @@ from multiprocessing import Pool
 from orientation_reconstruction_utilities import *
 from random_orientation_utilities import *
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from mpl_toolkits import mplot3d
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.lines import Line2D
@@ -52,6 +53,11 @@ def single_emeg_reconstruction_experiment_wrapper(count, true_orientation, eeg_l
 
 
 if __name__ == '__main__':
+  
+  mpl.rcParams["font.family"] = 'Arial'
+  mpl.rcParams['mathtext.fontset'] = 'custom'
+  mpl.rcParams['mathtext.it'] = 'Arial:italic'
+  mpl.rcParams['mathtext.rm'] = 'Arial'
   
   # perform simulation
   df_list = []

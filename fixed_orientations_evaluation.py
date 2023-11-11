@@ -83,6 +83,11 @@ def generalized_cartesian_to_spherical(onb, x, y, z):
 
 if __name__ == '__main__':
   
+  mpl.rcParams["font.family"] = 'Arial'
+  mpl.rcParams['mathtext.fontset'] = 'custom'
+  mpl.rcParams['mathtext.rm'] = 'Arial'
+  mpl.rcParams['mathtext.it'] = 'Arial:italic'
+  
   # compute svd-based coordinates system
   U, S, V_transposed = np.linalg.svd(meg_lf, full_matrices = False)
   onb = V_transposed.T
@@ -197,9 +202,9 @@ if __name__ == '__main__':
   top_level_figure.canvas.manager.set_window_title(f'Fixed orientation evaluation')
   top_level_figure.suptitle(f'Fixed orientation angle differences', fontsize = header_fontsize, weight = 'bold')
   subfigures = top_level_figure.subfigures(1, nr_beamformers + 1, wspace = 0.03, width_ratios=[1, 1, 1, 0.15])
-  subfigures[0].suptitle(9 * ' ' + f'MEG (tang.)', fontsize = header_fontsize - 1, weight = 'bold')
-  subfigures[1].suptitle(9 * ' ' + f'EEG', fontsize = header_fontsize - 1, weight = 'bold')
-  subfigures[2].suptitle(8 * ' ' + f'EMEG', fontsize = header_fontsize - 1, weight = 'bold')
+  subfigures[0].suptitle(12 * ' ' + f'MEG (tang.)', fontsize = header_fontsize - 1, weight = 'bold')
+  subfigures[1].suptitle(11 * ' ' + f'EEG', fontsize = header_fontsize - 1, weight = 'bold')
+  subfigures[2].suptitle(11 * ' ' + f'EMEG', fontsize = header_fontsize - 1, weight = 'bold')
   
   azimuth_scale = (azimuth_max - azimuth_min) / (azimuth_resolution - 1)
   elevation_scale = (elevation_max - elevation_min) / (elevation_resolution - 1)
