@@ -220,7 +220,11 @@ if __name__ == '__main__':
       # add singular vectors
       axes_meg_reconstructions.arrow(0, 0, 0, 1, color = smallest_singular_color)
       axes_meg_reconstructions.arrow(0, 0, 1, 0, color = largest_singular_color)
-    
+      
+      # add space above and below figure
+      axes_meg_reconstructions.text(0.5, 1.3, 'PLACEHOLER', horizontalalignment = 'center', verticalalignment = 'center', fontsize = fontsize, transform=axes_meg_reconstructions.transAxes, alpha = 0.0)
+      axes_meg_reconstructions.text(0.5, -0.3, 'PLACEHOLER', horizontalalignment = 'center', verticalalignment = 'center', fontsize = fontsize, transform=axes_meg_reconstructions.transAxes, alpha = 0.0)
+      
     # add legend
     legend_handles = [Line2D([], [], color = 'white', marker = 'o', markerfacecolor = reconstructed_orientation_color, label = 'Reconstructed orientations'),
                       Line2D([0], [0], color = smallest_singular_color, label = 'Smallest singular vector'),
