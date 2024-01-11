@@ -30,7 +30,7 @@ azimuth_min = 0
 azimuth_max = np.pi
 azimuth_resolution = 21
 # for elevation = np.pi/2 (resp. -np.pi/2) all points, independent of azimuth angle,
-# are the same. To avoid sampling the same point multiple times, we start little below np.pi/2
+# are the same. To avoid sampling the same point multiple times, we start a little below np.pi/2
 # (resp. a little above -np.pi/2)
 elevation_eps = np.pi / 100
 elevation_min = -np.pi / 2 + elevation_eps
@@ -57,7 +57,7 @@ images_computed = False
 # map a tuple of spherical coordinates (r, theta, phi) to the corresponding cartesian coordinates, 
 # with an arbitrary direction for the polar axis and the meridian plane
 #   params:
-#       - onb     :     3 x 3 array, where the columns are supposed to form an orthogonal basis of R^3. The last column is interpreted as the polar axis
+#       - onb     :     3 x 3 array, where the columns are supposed to form an orthonormal basis of R^3. The last column is interpreted as the polar axis
 #       - r       :     scalar, radius
 #       - theta   :     scalar, elevation angle
 #       - phi     :     scalar, azimuth angle
